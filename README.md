@@ -1,28 +1,26 @@
-# DataVizualisation:Spotify&Youtube
+# Data Visualization: Spotify & YouTube
 
-<!-- Përshkrimi i shkurtër i projektit dhe qëllimi i tij. -->
+<!-- Brief Project Description and its Purpose. -->
 
-## Kërkesat e Para-Procesimit të të Dhënave
+## Initial Data Preprocessing Requirements
 
-- Mbledhja e të dhënave
-- Definimi i tipeve të dhënave
-- Kualiteti i të dhënave
-- Integrimi, Agregimi, dhe Mostrimi
-- Pastrimi i të Dhënave
-- Reduktimi i Dimensionit
-- Zgjedhja e nën bashkësisë së vetive
-- Krijimi i Vetive
-- Diskretizimi dhe Binarizimi
-- Strategjia e Trajtimit për Vlerat e Zbrazëta
+- Data Collection
+- Data Type Definition
+- Data Quality
+- Integration, Aggregation, and Display
+- Data Cleaning
+- Dimension Reduction
+- Subset Selection
+- Feature Engineering
+- Discretization and Binarization
+- Handling Missing Values Strategy
 
-Pjesa e parë e këtij projekti synon të para-procesoje të dhënat për të bërë analizën më të qëndrueshme dhe të saktë. Për të filluar me para-procesimin, ju mund të ndiqni hapat dhe detyrat e mësipërme për të përgatitur të dhënat për analizën tuaj të mëtejshme.
+The first part of this project aims to preprocess the data to enable a more robust and accurate analysis. To start with preprocessing, you can follow the steps and tasks mentioned above to prepare the data for your further analysis.
 
-## Përdorimi
+## Usage
 
-<!-- Shpjegoni si të instalohet dhe të përdoret projektin tuaj.  -->
+<!-- Explain how to install and use your project. -->
 
-## Kontribuesit
+## Contributors
 
-- Lorent Sinani dhe Elon Demi
-
-
+- Lorent Sinani and Elon Demi
