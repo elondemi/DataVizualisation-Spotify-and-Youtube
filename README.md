@@ -23,4 +23,6 @@ The first part of this project aims to preprocess the data to enable a more robu
 
 ## Contributors
 
-- Lorent Sinani and Elon Demi
+- [Lorent Sinani](https://github.com/lorentsinani)
+
+- [Elon Demi](https://github.com/elondemi)
