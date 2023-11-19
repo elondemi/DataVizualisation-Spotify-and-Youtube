@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
 df = pd.read_csv('Spotify_Youtube.csv')
@@ -26,7 +27,23 @@ df['DanceabilityCategory'] = pd.cut(df['Danceability'], bins)
 scaler = StandardScaler()
 df['ScaledEnergy'] = scaler.fit_transform(df[['Energy']])
 
+# Feature Engineering
+df['SongLength'] = df['Duration_ms'] / 1000  # Convert milliseconds to seconds
+
+df['HighEnergy'] = df['Energy'].apply(lambda x: 1 if x > 0.8 else 0)  # threshold for high energy: 1 high ; 0 low
+
 df.to_csv('cleaned_data.csv', index=False)
+
+#dimension reduction
+# Columns we want to reduct into 2
+features = df[['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']]
+
+features = features.fillna(features.mean()) # need to fill because NaN is not allowed
+pca = PCA(n_components=2)
+reduced_features = pca.fit_transform(features)
+
+# New DataFrame with data of reduced_features
+reduced_df = pd.DataFrame(data=reduced_features, columns=['PC1', 'PC2'])
 
 
 # Histogram
