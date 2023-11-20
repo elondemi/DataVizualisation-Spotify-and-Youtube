@@ -1,4 +1,4 @@
-![image](https://github.com/elondemi/DataVizualisation-Spotify-and-Youtube/assets/66006296/36d74b93-472d-4e7f-9c2a-e6c394a69be3)# Data Visualization: Spotify & YouTube
+# Data Visualization: Spotify & YouTube
 
 ## Initial Data Preprocessing Requirements
 
