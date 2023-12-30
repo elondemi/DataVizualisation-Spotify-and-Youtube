@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+from scipy.stats import zscore
+import seaborn as sns
 
 df = pd.read_csv('Spotify_Youtube.csv')
 
@@ -45,6 +47,23 @@ reduced_features = pca.fit_transform(features)
 # New DataFrame with data of reduced_features
 reduced_df = pd.DataFrame(data=reduced_features, columns=['PC1', 'PC2'])
 
+numerical_columns = ['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']
+
+z_scores = df[numerical_columns].apply(zscore)
+
+threshold = 1
+outliers = df[(z_scores > threshold).any(axis=1)]
+
+print("Outliers:")
+print(outliers)
+
+# Summary statistics
+summary_stats = df.describe()
+
+# Multivariate Analysis (Example: Pairplot)
+
+sns.pairplot(df[['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']])
+plt.show()
 
 # Histogram
 plt.hist(df['Danceability'], bins=20)
