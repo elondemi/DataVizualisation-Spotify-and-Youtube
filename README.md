@@ -110,6 +110,30 @@ The first part of this project aims to preprocess the data to enable a more robu
     20717	39.491057	  -2.217929
 ```
 
+7. **Outlier Detection:**
+- We choosed to work with z-score method so we choosed numerical columns and then as threshold we set 1.
+```
+numerical_columns = ['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']
+
+z_scores = df[numerical_columns].apply(zscore)
+
+threshold = 1
+outliers = df[(z_scores > threshold).any(axis=1)]
+```
+
+8. **Data Exploration: Summary Statistics, Multivariate Analysis**
+   - Summary statistics provide insights into the central tendency, dispersion, and shape of data distributions. Multivariate analysis explores relationships between multiple variables.
+   - We used `describe()` method from Pandas and used `Pairplot` for the multivariate analysis.
+   - The `Pairplot` is implemented from `seaborn` library:
+```
+sns.pairplot(df[['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']])
+plt.show()
+```
+   - Figure shown:
+     
+ ![image](https://github.com/lorentsinani/Data-Visualization-Spotify-and-Youtube/assets/66006296/4486f45a-8dc2-4e68-b879-b49714c69d4d)
+
+
 ### Execution in Jupyter Notebook:
 
 - Place the `preprocessingdata.py` file inside the `src` folder of your Jupyter environment.
