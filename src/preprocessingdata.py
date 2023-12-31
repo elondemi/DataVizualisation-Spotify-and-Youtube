@@ -57,8 +57,6 @@ outliers = df[(z_scores > threshold).any(axis=1)]
 print("Outliers:")
 print(outliers)
 
-# Summary statistics
-summary_stats = df.describe()
 
 # Multivariate Analysis (Example: Pairplot)
 
