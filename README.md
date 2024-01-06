@@ -133,6 +133,30 @@ plt.show()
      
  ![image](https://github.com/lorentsinani/Data-Visualization-Spotify-and-Youtube/assets/66006296/4486f45a-8dc2-4e68-b879-b49714c69d4d)
 
+9. **Visualization by Data Types:**
+   - Histogram and Distribution Plot (Numeric Data):
+
+![image](https://github.com/elondemi/DataVizualisation-Spotify-and-Youtube/assets/66006296/d77d2b9a-b7d2-4e28-a1f8-0e577429dab0)
+
+   - Bar Plot (Categorical Data):
+
+![image](https://github.com/elondemi/DataVizualisation-Spotify-and-Youtube/assets/66006296/9ed78921-fe47-4839-9154-dcde2a0f8baa)
+
+10. **Static and Interactive Visualization:**
+   - Static Visualization with Matplotlib:
+
+![image](https://github.com/elondemi/DataVizualisation-Spotify-and-Youtube/assets/66006296/f720aee6-6da8-4874-a9fa-7bfb63788864)
+
+11. **Multi-Dimensional Data Visualization:**
+   - Interactive Visualization with Plotly (Scatter Plot):
+
+![image](https://github.com/elondemi/DataVizualisation-Spotify-and-Youtube/assets/66006296/fd9bf778-8110-4237-a038-461cdd99a6f0)
+
+   - Parallel Coordinates Plot with Plotly:
+
+![image](https://github.com/elondemi/DataVizualisation-Spotify-and-Youtube/assets/66006296/af998816-b2b9-496d-a193-0fedd051e6ba)
+
+
 
 ### Execution in Jupyter Notebook:
 
