@@ -4,7 +4,6 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 from scipy.stats import zscore
 import seaborn as sns
-import plotly.express as px
 
 df = pd.read_csv('Spotify_Youtube.csv')
 
@@ -48,6 +47,21 @@ reduced_features = pca.fit_transform(features)
 # New DataFrame with data of reduced_features
 reduced_df = pd.DataFrame(data=reduced_features, columns=['PC1', 'PC2'])
 
+numerical_columns = ['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']
+
+z_scores = df[numerical_columns].apply(zscore)
+
+threshold = 1
+outliers = df[(z_scores > threshold).any(axis=1)]
+
+print("Outliers:")
+print(outliers)
+
+
+# Multivariate Analysis (Example: Pairplot)
+
+sns.pairplot(df[['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']])
+plt.show()
 
 # Histogram
 plt.hist(df['Danceability'], bins=20)
@@ -78,8 +92,3 @@ plt.ylabel('Energy')
 plt.title('2D Scatter Plot: Danceability vs Energy (Color by Loudness)')
 plt.colorbar(label='Loudness')
 plt.show()
-
-# parallel coordinates plot with Plotly
-fig = px.parallel_coordinates(df[['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']],
-                              color='Tempo', labels={'Tempo': 'Tempo'})
-fig.show()
