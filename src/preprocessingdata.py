@@ -2,6 +2,9 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+from scipy.stats import zscore
+import seaborn as sns
+import plotly.express as px
 
 df = pd.read_csv('Spotify_Youtube.csv')
 
@@ -52,3 +55,31 @@ plt.xlabel('Danceability')
 plt.ylabel('Frequency')
 plt.title('Distribution of Danceability')
 plt.show()
+
+# Frequency of song types
+df['Album_type'].value_counts().plot(kind='bar')
+plt.xlabel('Album Type')
+plt.ylabel('Frequency')
+plt.title('Frequency of Album Types')
+plt.show()
+
+# Graph which shows the affect of energy in danceability
+plt.scatter(df['Danceability'], df['Energy'])
+plt.xlabel('Danceability')
+plt.ylabel('Energy')
+plt.title('Scatter Plot: Danceability vs Energy')
+plt.show()
+
+
+# 2D scatter plot to show 'Danceability' vs 'Energy' in a matter of color by 'Loudness'
+plt.scatter(df['Danceability'], df['Energy'], c=df['Loudness'], cmap='viridis')
+plt.xlabel('Danceability')
+plt.ylabel('Energy')
+plt.title('2D Scatter Plot: Danceability vs Energy (Color by Loudness)')
+plt.colorbar(label='Loudness')
+plt.show()
+
+# parallel coordinates plot with Plotly
+fig = px.parallel_coordinates(df[['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Tempo']],
+                              color='Tempo', labels={'Tempo': 'Tempo'})
+fig.show()
