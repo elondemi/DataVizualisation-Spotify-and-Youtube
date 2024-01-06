@@ -4,6 +4,7 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 from scipy.stats import zscore
 import seaborn as sns
+import plotly.express as px
 
 df = pd.read_csv('Spotify_Youtube.csv')
 
@@ -92,3 +93,8 @@ plt.ylabel('Energy')
 plt.title('2D Scatter Plot: Danceability vs Energy (Color by Loudness)')
 plt.colorbar(label='Loudness')
 plt.show()
+
+# Example interactive scatter plot with Plotly (replace columns accordingly)
+fig = px.scatter(df, x='Danceability', y='Energy', title='Interactive Scatter Plot', 
+                 labels={'Danceability': 'Danceability Score', 'Energy': 'Energy Score'})
+fig.show()
